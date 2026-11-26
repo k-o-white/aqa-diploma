@@ -30,9 +30,8 @@ public class PaymentPage {
     private final SelenideElement errorNotificationContent =
             $(".notification_status_error .notification__content");
 
-    public PaymentPage open() {
+    public PaymentPage() {
         Selenide.open("http://localhost:8080/");
-        return this;
     }
 
     public PaymentPage selectPayment() {
@@ -88,12 +87,10 @@ public class PaymentPage {
     ) {
         title.shouldBe(visible, Duration.ofSeconds(10)).shouldHave(exactText(expectedTitle));
         content.shouldBe(visible).shouldHave(exactText(expectedContent));
-        $$(".notification").filter(visible).shouldHave(size(1));
-        SelenideElement notification = $$(".notification").filter(visible).first();
+        $$(".notification.notification_visible").shouldHave(size(1));
+        SelenideElement notification = $(".notification.notification_visible");
         notification.$(".notification__closer").click();
-        notification.should(disappear, Duration.ofSeconds(5));
-        Selenide.sleep(2000);
-        $$(".notification").filter(visible).shouldHave(size(0));
+        $$(".notification.notification_visible").shouldHave(size(0), Duration.ofSeconds(5));
         return this;
     }
 
