@@ -14,6 +14,7 @@
 | Неуспешно | 14 | 51,85% |
 
 <img width="861" height="406" alt="image" src="https://github.com/user-attachments/assets/48fcde14-a356-4ab1-8428-52a298199ae9" />
+<img width="862" height="416" alt="image" src="https://github.com/user-attachments/assets/9aa600c8-185d-4b4e-8b64-2eb06bd3db9b" />
 
 ## Общие рекомендации
 
